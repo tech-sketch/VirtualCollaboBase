@@ -14,7 +14,7 @@ namespace Recollab.RoomManagement
         {
             Room room = new Room();
 
-            if (string.IsNullOrEmpty(roomId))
+            if (!string.IsNullOrEmpty(roomId))
             {
                 room.RoomId = roomId;
             }
