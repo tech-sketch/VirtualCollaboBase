@@ -1,6 +1,4 @@
 ﻿using System;
-using UniRx.Async;
-using Recollab.UserManagement;
 
 namespace Recollab.RoomManagement
 {
@@ -9,14 +7,22 @@ namespace Recollab.RoomManagement
         public RoomManager()
         {
             //デフォルトルームを仮生成
-            CreateRoom("test", SystemDefines.SCENE_NAME_ROOM_STAGE_01);
+            CreateRoom("テスト", SystemDefines.SCENE_NAME_ROOM_STAGE_01, "DefaultRoom");
         }
 
-        public void CreateRoom(string roomName, string roomType)
+        public void CreateRoom(string roomName, string roomType, string roomId = "")
         {
-          
             Room room = new Room();
-            room.RoomId = Guid.NewGuid().ToString("N").Substring(0, 6);
+
+            if (string.IsNullOrEmpty(roomId))
+            {
+                room.RoomId = roomId;
+            }
+            else
+            {
+                room.RoomId = Guid.NewGuid().ToString("N").Substring(0, 6);
+            }
+
             room.RoomName = roomName;
             room.RoomStageType = roomType;
             room.LastHeldTimeStart = DateTime.Now.ToString("yyyyMMddHHmm");
@@ -28,15 +34,11 @@ namespace Recollab.RoomManagement
              
             RoomInfo.m_CurrentRoom = room;
             RoomInfo.m_Rooms.Insert(0, room);
-            CreateJoinedRoomList();
         }
 
         public void CreateJoinedRoomList()
         {
-           
-
+            // ToDo
         }
-
-
     }
 }
