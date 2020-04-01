@@ -59,7 +59,7 @@ OculusQuestで5人程度が同じルームに入っての会話をしたり、�
 
     MIT License : Copyright (c) 2019 Soichiro Sugimoto
 
-* [TextureSharing-PUN2](https://github.com/sotanmochi/TextureSharing-MUN2)
+* [TextureSharing-PUN2](https://github.com/sotanmochi/TextureSharing-PUN2)
 
     MIT License : Copyright (c) 2019 Soichiro Sugimoto
 
